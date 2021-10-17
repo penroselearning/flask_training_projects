@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <title>Weather In {{city.title().replace("%20"," ")}}</title>
+</head>
+
+<body style="background: url({{weather_wallpaper}}) no-repeat center center/cover;">
+    <div class="weather-info">
+        <img src="https://www.countryflags.io/{{data['country_code']}}/flat/64.png" alt="">
+        <h1>The tempreture in <span>{{city.title().replace("%20"," ")}}</span> is <span>{{data['temp']}}°C</span></h1>
+        <div class="weather-more-info">
+            <div class="more-info">
+                <h6>feels like</h6>
+                <p>{{data['feels_like']}} °C</p>
+            </div>
+            <div class="more-info">
+                <h6>wind</h6>
+                <p>{{data['wind_speed']}} <span>km/h</span></p>
+            </div>
+            <div class="more-info">
+                <h6>visibility</h6>
+                <p>{{data['visibility']}} <span>km</span></p>
+            </div>
+            <div class="more-info">
+                <h6>humidity</h6>
+                <p>{{data['humidity']}}%</p>
+            </div>
+            <div class="more-info">
+                <h6>pressure</h6>
+                <p>{{data['pressure']}} <span>mb</span></p>
+            </div>
+        </div>
+        <div class="weather-more-info">
+            <div class="more-info">
+                <h6>min. temp</h6>
+                <p>{{data['temp_min']}} °C</p>
+            </div>
+            <div class="more-info">
+                <h6>max. temp</h6>
+                <p>{{data['temp_max']}} °C</p>
+            </div>
+        </div>
+        <!-- <h1>{{list_of_data}}</h1> -->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+h1,h2,h3 {
+    letter-spacing: 2px;
+}
+
+h1,h2,h3, h1 span, h2 span, h3 span {
+    font-family: 'Bebas Neue', cursive;
+}
+
+h1 span, h2 span, h3 span {
+    font-size: 150%;
+}
+
+h1 {
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+select {
+    width: 55%;
+}
+
+.weather-form {
+    /* border: 1px solid white; */
+    padding: 5%;
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    color: white;
+    width: 50%;
+}
+
+.weather-info {
+    text-align: center;
+    /* backdrop-filter: blur(10px); */
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
+    padding: 2.5%;
+    border-radius: 10px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+select, input, option {
+    border: none;
+    padding: 10px 15px;
+    
+    outline: none;
+}
+
+.weather-more-info {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.weather-more-info h6 {
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: lighter;
+    font-weight: bolder;
+}
+
+.weather-more-info h6 span{
+    text-transform: lowercase;
+}
+
+.weather-more-info p{
+    margin: 0;
+}
+
+.more-info {
+    margin: 0 30px;
+}

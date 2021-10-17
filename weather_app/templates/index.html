@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <title>Weather App</title>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: url(https://eskipaper.com/images/weather-wallpaper-4.jpg) no-repeat center center/cover;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        /* border: 1px solid white; */
+        padding: 5% 2.5%;
+        backdrop-filter: blur(50px);
+        border-radius: 10px;
+    }
+
+    img {
+        width: 10%;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    select {
+        width: 50%;
+        border: none;
+        padding: 4.5px 10px;
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    input[type="submit"] {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    select:focus,
+    input[type="submit"]:focus {
+        outline: none;
+    }
+
+    .headers,
+    .weather-info {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form {
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="headers">
+            <h1>The Weather App</h1>
+            <img src="https://cdn2.iconfinder.com/data/icons/weather-flat-14/64/weather03-512.png" alt="">
+        </div>
+        <div class="form">
+            <form action="{{url_for('home')}}" method="post">
+                <div class="weather-info">
+                    <select name="city_name" id="city_name">
+                        <option style="display: none;">Choose A City</option>
+                        {% for city in cities %}
+                        <option value="{{city}}">{{city}}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" value="Show Weather">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
