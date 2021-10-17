@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card Generator</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+        * {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+            background-color: rgb(212, 3, 38);
+        }
+
+        p {
+            font-weight: bolder;
+        }
+
+        .container {
+            background-color: white;
+            box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+            /* border: 1px solid black; */
+            padding: 2.5%;
+        }
+
+        input[type="text"],input[type="number"] {
+            border: none;
+            border-bottom: 1px solid black;
+        }
+
+
+        input[type="submit"] {
+            width: 100%;
+            margin: 10px 0;
+            padding: 5px 0;
+            letter-spacing: 2px;
+            font-weight: bolder;
+
+            background-color: rgb(212, 3, 38);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form_control_text {
+            display: flex;
+            justify-content: space-between;
+
+            margin: 10px 0;
+        }
+
+        .card {
+            /* border: 1px solid white; */
+            width: 500px;
+            height: 300px;
+            margin: 10px 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .card h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 60px;
+            text-align: center;
+
+            color: white;
+        }
+
+    
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Greeting Card Generator</h1>
+
+        <form action="{{url_for('home')}}" method="post">
+
+            <div class="form_control_text">
+                <label for="name">Enter name here..</label>
+                <input type="text" name="name" id="name" placeholder="John Doe"><br />
+            </div>
+
+            <div class="form_control_text">
+                <label for="age">Enter age here..</label>
+                <input type="number" name="age" id="age" placeholder="16"><br />
+            </div>
+
+            <!-- gender -->
+            <!-- <p>Select The Gender</p>
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label><br />
+
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label><br /> -->
+
+            <!-- card type -->
+            <p>Select Your Greeting Card</p>
+            <input type="radio" name="cardtype" id="new_year" value="new_year">
+            <label for="new_year">New Year</label><br />
+
+            <input type="radio" name="cardtype" id="birthday" value="birthday">
+            <label for="birthday">Birthday</label><br />
+
+            <input type="radio" name="cardtype" id="christmas" value="christmas">
+            <label for="christmas">Christmas</label><br />
+
+            <input type="submit" value="GENERATE CARD">
+        </form>
+    </div>
+
+    <div class="card" style="background-image: url({{img_url}});">
+        <h1>{{message}}</h1>
+    </div>
+
+
+</body>
+
+</html>
